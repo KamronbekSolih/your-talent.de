@@ -53,6 +53,26 @@ Analytics 4 measurement ID to enable analytics. It only loads after a
 visitor accepts cookies in the consent banner; leave it unset to disable
 analytics entirely.
 
+## CI/CD
+
+- **CI** (`.github/workflows/ci.yml`) runs lint and build on every push and
+  pull request to `master`. It needs `NEXT_PUBLIC_SUPABASE_URL` and
+  `NEXT_PUBLIC_SUPABASE_ANON_KEY` as repo secrets (Settings → Secrets and
+  variables → Actions) — these are the publishable anon key, safe to store
+  as plain repo config.
+- **Supabase migrations** (`.github/workflows/deploy-supabase.yml`) is a
+  manually-triggered workflow (Actions tab → "Deploy Supabase migrations" →
+  Run workflow) that applies anything new under `supabase/migrations/` to
+  your live project via the Supabase CLI. It needs two additional secrets:
+  `SUPABASE_ACCESS_TOKEN` (from your
+  [account tokens page](https://supabase.com/dashboard/account/tokens)) and
+  `SUPABASE_PROJECT_REF` (the `<ref>` in `https://<ref>.supabase.co`).
+- **Vercel** deploys automatically on every push to `master` once the
+  project is connected (Vercel → Add New Project → import this repo). Set
+  the same two `NEXT_PUBLIC_*` variables in the Vercel project's
+  Environment Variables before the first deploy — they're inlined at build
+  time, so a build without them will ship broken Supabase calls.
+
 ## Before going live
 
 - Replace the bracketed placeholders in the Impressum and Datenschutz

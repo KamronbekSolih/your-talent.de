@@ -1,0 +1,32 @@
+name: Deploy Supabase migrations
+
+# Manual trigger only: applying schema changes to a live database isn't
+# something that should happen automatically on every push. Run this from
+# the Actions tab after merging a new file under supabase/migrations/.
+#
+# Requires two repo secrets (Settings -> Secrets and variables -> Actions):
+#   SUPABASE_ACCESS_TOKEN  - personal access token from
+#                            https://supabase.com/dashboard/account/tokens
+#   SUPABASE_PROJECT_REF   - the project ref from your Supabase project URL
+#                            (https://<ref>.supabase.co)
+on:
+  workflow_dispatch:
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - run: supabase link --project-ref "$SUPABASE_PROJECT_REF"
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+
+      - run: supabase db push
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
