@@ -3,7 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { locales, localeFlags, localeNames, type Locale } from "@/i18n/config";
+import { locales, localeNames, type Locale } from "@/i18n/config";
+import { FlagDE, FlagGB, FlagUZ } from "./Flags";
+
+const flagComponents: Record<Locale, (props: { className?: string }) => React.JSX.Element> = {
+  de: FlagDE,
+  en: FlagGB,
+  uz: FlagUZ,
+};
 
 export function LanguageSwitcher({ locale }: { locale: Locale }) {
   const [open, setOpen] = useState(false);
@@ -24,6 +31,8 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const CurrentFlag = flagComponents[locale];
+
   return (
     <div ref={containerRef} className="relative">
       <button
@@ -33,7 +42,7 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
         aria-expanded={open}
         className="flex items-center gap-1.5 rounded-md border border-zinc-200 px-2.5 py-1.5 text-sm hover:bg-zinc-50"
       >
-        <span className="text-base leading-none">{localeFlags[locale]}</span>
+        <CurrentFlag className="h-3.5 w-5 shrink-0 rounded-[2px]" />
         <span className="font-medium text-zinc-700">{locale.toUpperCase()}</span>
         <svg
           viewBox="0 0 20 20"
@@ -53,25 +62,28 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
           role="listbox"
           className="absolute right-0 z-50 mt-2 w-40 overflow-hidden rounded-md border border-zinc-200 bg-white py-1 shadow-lg"
         >
-          {locales.map((loc) => (
-            <li key={loc}>
-              <Link
-                href={`/${loc}${rest}`}
-                onClick={() => {
-                  document.cookie = `NEXT_LOCALE=${loc}; path=/; max-age=31536000`;
-                  setOpen(false);
-                }}
-                className={`flex items-center gap-2 px-3 py-2 text-sm hover:bg-zinc-50 ${
-                  loc === locale
-                    ? "font-medium text-orange-600"
-                    : "text-zinc-700"
-                }`}
-              >
-                <span className="text-base leading-none">{localeFlags[loc]}</span>
-                <span>{localeNames[loc]}</span>
-              </Link>
-            </li>
-          ))}
+          {locales.map((loc) => {
+            const Flag = flagComponents[loc];
+            return (
+              <li key={loc}>
+                <Link
+                  href={`/${loc}${rest}`}
+                  onClick={() => {
+                    document.cookie = `NEXT_LOCALE=${loc}; path=/; max-age=31536000`;
+                    setOpen(false);
+                  }}
+                  className={`flex items-center gap-2 px-3 py-2 text-sm hover:bg-zinc-50 ${
+                    loc === locale
+                      ? "font-medium text-orange-600"
+                      : "text-zinc-700"
+                  }`}
+                >
+                  <Flag className="h-3.5 w-5 shrink-0 rounded-[2px]" />
+                  <span>{localeNames[loc]}</span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>
