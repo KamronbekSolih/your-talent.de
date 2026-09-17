@@ -2,32 +2,78 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { locales, type Locale } from "@/i18n/config";
+import { useEffect, useRef, useState } from "react";
+import { locales, localeFlags, localeNames, type Locale } from "@/i18n/config";
 
 export function LanguageSwitcher({ locale }: { locale: Locale }) {
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname() || "/";
   const rest = pathname.replace(new RegExp(`^/(${locales.join("|")})`), "");
 
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
-    <div className="flex gap-2 text-xs font-semibold text-zinc-400">
-      {locales.map((loc, i) => (
-        <span key={loc} className="flex items-center gap-2">
-          {i > 0 && <span className="text-zinc-300">/</span>}
-          <Link
-            href={`/${loc}${rest}`}
-            onClick={() => {
-              document.cookie = `NEXT_LOCALE=${loc}; path=/; max-age=31536000`;
-            }}
-            className={
-              loc === locale
-                ? "text-orange-600"
-                : "hover:text-zinc-900"
-            }
-          >
-            {loc.toUpperCase()}
-          </Link>
-        </span>
-      ))}
+    <div ref={containerRef} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        className="flex items-center gap-1.5 rounded-md border border-zinc-200 px-2.5 py-1.5 text-sm hover:bg-zinc-50"
+      >
+        <span className="text-base leading-none">{localeFlags[locale]}</span>
+        <span className="font-medium text-zinc-700">{locale.toUpperCase()}</span>
+        <svg
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          className="h-3.5 w-3.5 text-zinc-400"
+        >
+          <path
+            fillRule="evenodd"
+            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </button>
+
+      {open && (
+        <ul
+          role="listbox"
+          className="absolute right-0 z-50 mt-2 w-40 overflow-hidden rounded-md border border-zinc-200 bg-white py-1 shadow-lg"
+        >
+          {locales.map((loc) => (
+            <li key={loc}>
+              <Link
+                href={`/${loc}${rest}`}
+                onClick={() => {
+                  document.cookie = `NEXT_LOCALE=${loc}; path=/; max-age=31536000`;
+                  setOpen(false);
+                }}
+                className={`flex items-center gap-2 px-3 py-2 text-sm hover:bg-zinc-50 ${
+                  loc === locale
+                    ? "font-medium text-orange-600"
+                    : "text-zinc-700"
+                }`}
+              >
+                <span className="text-base leading-none">{localeFlags[loc]}</span>
+                <span>{localeNames[loc]}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

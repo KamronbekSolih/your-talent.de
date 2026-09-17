@@ -8,6 +8,12 @@ export const localeNames: Record<Locale, string> = {
   uz: "O'zbekcha",
 };
 
+export const localeFlags: Record<Locale, string> = {
+  de: "🇩🇪",
+  en: "🇬🇧",
+  uz: "🇺🇿",
+};
+
 export function isLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);
 }
