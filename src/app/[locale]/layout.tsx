@@ -5,6 +5,8 @@ import { locales, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
+import { CookieConsent } from "@/components/CookieConsent";
+import { Analytics } from "@/components/Analytics";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -45,6 +47,8 @@ export default async function LocaleLayout({
         <NavBar locale={locale as Locale} dict={dict.nav} />
         <div className="flex flex-1 flex-col">{children}</div>
         <Footer locale={locale as Locale} dict={dict.footer} />
+        <CookieConsent dict={dict.cookieConsent} />
+        <Analytics />
       </body>
     </html>
   );

@@ -11,6 +11,13 @@ export const en: Dictionary = {
   footer: {
     impressum: "Legal Notice",
     datenschutz: "Privacy Policy",
+    cookiePreferences: "Cookie Settings",
+  },
+  cookieConsent: {
+    message:
+      "Besides technically necessary cookies, this website also uses analytics cookies (Google Analytics) to understand how visitors use the site. You can accept or decline analytics cookies.",
+    accept: "Accept",
+    decline: "Decline",
   },
   home: {
     title: "International skilled workers for your company",
@@ -151,7 +158,7 @@ export const en: Dictionary = {
       "Our website and its database are hosted with Supabase (EU server location, Frankfurt). A data processing agreement under Art. 28 GDPR is in place with this provider. [Add details of the website's own hosting provider, e.g. Vercel.]",
     s6Heading: "6. Cookies",
     s6Text:
-      "This website uses only technically necessary cookies to maintain the admin login session and to remember your language preference. No tracking or marketing cookies are used.",
+      "This website uses technically necessary cookies to maintain the admin login session and to remember your language preference and your cookie choice. In addition – only with your consent – we use Google Analytics for anonymized analysis of website usage (IP anonymization enabled). You can withdraw or grant consent at any time via the \"Cookie Settings\" link in the footer. No marketing or advertising cookies are used.",
     s7Heading: "7. Your rights",
     s7Text:
       "You have the right to access, rectify, erase, and restrict the processing of your data, as well as the right to data portability and to object to processing (Art. 15–21 GDPR). You may also withdraw any consent given at any time with effect for the future. Please contact us at the email address above.",

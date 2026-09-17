@@ -11,6 +11,12 @@ export type Dictionary = {
   footer: {
     impressum: string;
     datenschutz: string;
+    cookiePreferences: string;
+  };
+  cookieConsent: {
+    message: string;
+    accept: string;
+    decline: string;
   };
   home: {
     title: string;

@@ -11,6 +11,13 @@ export const uz: Dictionary = {
   footer: {
     impressum: "Yuridik ma'lumot",
     datenschutz: "Maxfiylik siyosati",
+    cookiePreferences: "Cookie sozlamalari",
+  },
+  cookieConsent: {
+    message:
+      "Ushbu veb-sayt texnik jihatdan zarur bo'lgan cookie fayllaridan tashqari, tashrif buyuruvchilarning saytdan qanday foydalanishini tushunish uchun tahliliy cookie fayllaridan (Google Analytics) ham foydalanadi. Siz tahliliy cookie fayllarini qabul qilishingiz yoki rad etishingiz mumkin.",
+    accept: "Qabul qilish",
+    decline: "Rad etish",
   },
   home: {
     title: "Kompaniyangiz uchun xalqaro malakali mutaxassislar",
@@ -145,7 +152,7 @@ export const uz: Dictionary = {
       "Agar siz bizning veb-saytimiz orqali biror lavozimga ariza topshirsangiz yoki aloqa formasi orqali bizga yozsangiz, biz siz taqdim etgan ma'lumotlarni — ism, elektron pochta manzili, telefon raqami, xabaringiz va, agar yuklangan bo'lsa, rezyumeingizni — qayta ishlaymiz. Ushbu ma'lumotlar faqat sizning so'rovingiz yoki arizangizni ko'rib chiqish uchun ishlatiladi.",
     s3Heading: "3. Huquqiy asos",
     s3Text:
-      "Qayta ishlash sizning roziligingiz asosida (GDPR 6-modda 1-band «a» bandi) hamda ariza topshirish jarayonining bir qismi sifatida shartnomagacha bo'lgan chora-tadbirlarni amalga oshirish uchun (GDPR 6-modda 1-band «b» bandi) amalga oshiriladi.",
+      "Qayta ishlash sizning roziligingiz asosida (GDPR 6-moddasining 1-qismi «a» bandi) hamda ariza topshirish jarayonining bir qismi sifatida shartnomagacha bo'lgan chora-tadbirlarni amalga oshirish uchun (GDPR 6-moddasining 1-qismi «b» bandi) amalga oshiriladi.",
     s4Heading: "4. Saqlash muddati",
     s4Text:
       "Ma'lumotlaringiz ariza yoki so'rov jarayoni davomida saqlanadi va jarayon yakunlangandan so'ng eng kech [muddat, masalan, 6 oy] ichida o'chiriladi, agar siz uzoqroq saqlashga rozilik bildirmagan bo'lsangiz.",
@@ -154,7 +161,7 @@ export const uz: Dictionary = {
       "Bizning veb-saytimiz va unga tegishli ma'lumotlar bazasi Supabase'da (server joylashuvi: Yevropa Ittifoqi, Frankfurt) joylashtirilgan. Ushbu provayder bilan GDPR 28-moddasiga muvofiq ma'lumotlarni qayta ishlash shartnomasi mavjud. [Veb-saytning o'zi uchun xosting provayderi haqida ma'lumot qo'shing, masalan, Vercel.]",
     s6Heading: "6. Cookie fayllari",
     s6Text:
-      "Ushbu veb-sayt faqat admin panelidagi tizimga kirish sessiyasini saqlash va til tanlovingizni eslab qolish uchun texnik jihatdan zarur bo'lgan cookie fayllaridan foydalanadi. Kuzatuv yoki marketing cookie fayllari ishlatilmaydi.",
+      "Ushbu veb-sayt admin panelidagi tizimga kirish sessiyasini saqlash, til tanlovingizni va cookie tanlovingizni eslab qolish uchun texnik jihatdan zarur bo'lgan cookie fayllaridan foydalanadi. Bundan tashqari — faqat sizning roziligingiz bilan — biz veb-saytdan foydalanishni anonim tarzda tahlil qilish uchun Google Analytics'dan foydalanamiz (IP-manzilni anonimlashtirish yoqilgan). Roziligingizni istalgan vaqtda footer'dagi «Cookie sozlamalari» havolasi orqali bekor qilishingiz yoki qayta berishingiz mumkin. Marketing yoki reklama cookie fayllari ishlatilmaydi.",
     s7Heading: "7. Sizning huquqlaringiz",
     s7Text:
       "Sizda o'z ma'lumotlaringiz haqida ma'lumot olish, ularni tuzatish, o'chirish, qayta ishlashni cheklash, ma'lumotlarni ko'chirish, shuningdek qayta ishlashga qarshi chiqish huquqi bor (GDPR 15–21-moddalar). Bundan tashqari, siz bergan roziligingizni istalgan vaqtda kelajakka nisbatan bekor qilishingiz mumkin. Buning uchun yuqorida ko'rsatilgan elektron pochta manziliga murojaat qiling.",

@@ -11,6 +11,13 @@ export const de: Dictionary = {
   footer: {
     impressum: "Impressum",
     datenschutz: "Datenschutz",
+    cookiePreferences: "Cookie-Einstellungen",
+  },
+  cookieConsent: {
+    message:
+      "Diese Website verwendet neben technisch notwendigen Cookies auch Analyse-Cookies (Google Analytics), um zu verstehen, wie Besucher die Seite nutzen. Sie können der Nutzung von Analyse-Cookies zustimmen oder sie ablehnen.",
+    accept: "Akzeptieren",
+    decline: "Ablehnen",
   },
   home: {
     title: "Internationale Fachkräfte für Ihr Unternehmen",
@@ -156,7 +163,7 @@ export const de: Dictionary = {
       "Unsere Website und die zugehörige Datenbank werden bei Supabase (Serverstandort EU, Frankfurt) gehostet. Mit dem Anbieter besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO. [Angaben zum Hosting-Anbieter der Website selbst ergänzen, z. B. Vercel.]",
     s6Heading: "6. Cookies",
     s6Text:
-      "Diese Website verwendet ausschließlich technisch notwendige Cookies zur Aufrechterhaltung der Anmeldesitzung im Admin-Bereich und zur Speicherung Ihrer Sprachauswahl. Es werden keine Tracking- oder Marketing-Cookies eingesetzt.",
+      "Diese Website verwendet technisch notwendige Cookies zur Aufrechterhaltung der Anmeldesitzung im Admin-Bereich und zur Speicherung Ihrer Sprachauswahl sowie Ihrer Cookie-Einstellung. Zusätzlich setzen wir – nur mit Ihrer Einwilligung – Google Analytics zur anonymisierten Analyse der Websitenutzung ein (IP-Anonymisierung aktiviert). Sie können Ihre Einwilligung jederzeit über den Link „Cookie-Einstellungen” im Footer widerrufen oder erteilen. Es werden keine Marketing- oder Werbe-Cookies eingesetzt.",
     s7Heading: "7. Ihre Rechte",
     s7Text:
       "Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die Verarbeitung Ihrer Daten (Art. 15–21 DSGVO). Zudem können Sie eine erteilte Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen. Wenden Sie sich hierzu an die oben genannte E-Mail-Adresse.",

@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Locale } from "@/i18n/config";
 import { localeHref } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/types";
+import { CookiePreferencesButton } from "./CookiePreferencesButton";
 
 export function Footer({
   locale,
@@ -21,6 +22,7 @@ export function Footer({
           <Link href={localeHref(locale, "/datenschutz")} className="hover:text-zinc-900">
             {dict.datenschutz}
           </Link>
+          <CookiePreferencesButton label={dict.cookiePreferences} />
         </div>
       </div>
     </footer>
