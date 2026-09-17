@@ -17,11 +17,19 @@ export default async function AdminDashboard() {
     <main className="mx-auto w-full max-w-4xl flex-1 px-6 py-12">
       <div className="mb-8 flex items-center justify-between">
         <h1 className="text-2xl font-semibold text-zinc-900">Admin-Bereich</h1>
-        <form action={signOut}>
+        <div className="flex items-center gap-4">
+          <Link
+            href="/admin/messages"
+            className="text-sm text-zinc-500 hover:text-zinc-900"
+          >
+            Kontaktnachrichten
+          </Link>
+          <form action={signOut}>
           <button className="text-sm text-zinc-500 hover:text-zinc-900">
             Abmelden
           </button>
-        </form>
+          </form>
+        </div>
       </div>
 
       <section className="mb-10 rounded-lg border border-zinc-200 bg-white p-6 shadow-sm">

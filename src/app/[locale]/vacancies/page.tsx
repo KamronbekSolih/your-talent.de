@@ -1,10 +1,21 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import type { Vacancy } from "@/lib/supabase/types";
+import { isLocale, localeHref, type Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
 
 export const dynamic = "force-dynamic";
 
-export default async function VacanciesPage() {
+export default async function VacanciesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (!isLocale(locale)) notFound();
+  const dict = getDictionary(locale as Locale);
+
   const supabase = await createClient();
   const { data: vacancies } = await supabase
     .from("vacancies")
@@ -16,14 +27,11 @@ export default async function VacanciesPage() {
   return (
     <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-16">
       <h1 className="mb-8 text-3xl font-semibold tracking-tight text-zinc-900">
-        Offene Stellen
+        {dict.vacanciesList.title}
       </h1>
 
       {!vacancies || vacancies.length === 0 ? (
-        <p className="text-zinc-600">
-          Aktuell sind keine Stellen ausgeschrieben. Schauen Sie bald wieder
-          vorbei.
-        </p>
+        <p className="text-zinc-600">{dict.vacanciesList.empty}</p>
       ) : (
         <ul className="flex flex-col gap-4">
           {vacancies.map((vacancy) => (
@@ -32,7 +40,7 @@ export default async function VacanciesPage() {
               className="rounded-lg border border-zinc-200 bg-white p-6 shadow-sm"
             >
               <Link
-                href={`/vacancies/${vacancy.slug}`}
+                href={localeHref(locale as Locale, `/vacancies/${vacancy.slug}`)}
                 className="text-xl font-medium text-zinc-900 hover:text-orange-600"
               >
                 {vacancy.title}

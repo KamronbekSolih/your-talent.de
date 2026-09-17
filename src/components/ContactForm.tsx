@@ -5,14 +5,12 @@ import { createClient } from "@/lib/supabase/client";
 import { localeHref, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/types";
 
-export function ApplicationForm({
-  vacancyId,
+export function ContactForm({
   locale,
   dict,
 }: {
-  vacancyId: string;
   locale: Locale;
-  dict: Dictionary["applicationForm"];
+  dict: Dictionary["contact"];
 }) {
   const [status, setStatus] = useState<"idle" | "submitting" | "done" | "error">(
     "idle"
@@ -26,12 +24,10 @@ export function ApplicationForm({
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const fullName = String(formData.get("full_name") || "");
+    const name = String(formData.get("name") || "");
     const email = String(formData.get("email") || "");
-    const phone = String(formData.get("phone") || "");
     const message = String(formData.get("message") || "");
     const consent = formData.get("consent") === "on";
-    const file = formData.get("cv") as File | null;
 
     if (!consent) {
       setStatus("error");
@@ -40,35 +36,9 @@ export function ApplicationForm({
     }
 
     const supabase = createClient();
-    let cvPath: string | null = null;
-
-    if (file && file.size > 0) {
-      if (file.size > 10 * 1024 * 1024) {
-        setStatus("error");
-        setError(dict.errorFileSize);
-        return;
-      }
-      const path = `${vacancyId}/${crypto.randomUUID()}-${file.name}`;
-      const { error: uploadError } = await supabase.storage
-        .from("cvs")
-        .upload(path, file);
-      if (uploadError) {
-        setStatus("error");
-        setError(dict.errorUpload);
-        return;
-      }
-      cvPath = path;
-    }
-
-    const { error: insertError } = await supabase.from("applications").insert({
-      vacancy_id: vacancyId,
-      full_name: fullName,
-      email,
-      phone: phone || null,
-      message: message || null,
-      cv_path: cvPath,
-      consent_given: consent,
-    });
+    const { error: insertError } = await supabase
+      .from("contact_messages")
+      .insert({ name, email, message });
 
     if (insertError) {
       setStatus("error");
@@ -92,10 +62,10 @@ export function ApplicationForm({
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div>
         <label className="mb-1 block text-sm font-medium text-zinc-700">
-          {dict.name}
+          {dict.formName}
         </label>
         <input
-          name="full_name"
+          name="name"
           type="text"
           required
           className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
@@ -103,7 +73,7 @@ export function ApplicationForm({
       </div>
       <div>
         <label className="mb-1 block text-sm font-medium text-zinc-700">
-          {dict.email}
+          {dict.formEmail}
         </label>
         <input
           name="email"
@@ -114,33 +84,13 @@ export function ApplicationForm({
       </div>
       <div>
         <label className="mb-1 block text-sm font-medium text-zinc-700">
-          {dict.phone}
-        </label>
-        <input
-          name="phone"
-          type="tel"
-          className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
-        />
-      </div>
-      <div>
-        <label className="mb-1 block text-sm font-medium text-zinc-700">
-          {dict.message}
+          {dict.formMessage}
         </label>
         <textarea
           name="message"
-          rows={4}
+          required
+          rows={5}
           className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
-        />
-      </div>
-      <div>
-        <label className="mb-1 block text-sm font-medium text-zinc-700">
-          {dict.cv}
-        </label>
-        <input
-          name="cv"
-          type="file"
-          accept=".pdf,.doc,.docx"
-          className="w-full text-sm"
         />
       </div>
       <label className="flex items-start gap-2 text-sm text-zinc-600">

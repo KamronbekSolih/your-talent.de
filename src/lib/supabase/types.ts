@@ -22,3 +22,11 @@ export type Application = {
   consent_given: boolean;
   created_at: string;
 };
+
+export type ContactMessage = {
+  id: string;
+  name: string;
+  email: string;
+  message: string;
+  created_at: string;
+};

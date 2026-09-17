@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import type { Vacancy } from "@/lib/supabase/types";
+import { isLocale, type Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
 import { ApplicationForm } from "@/components/ApplicationForm";
 
 export const dynamic = "force-dynamic";
@@ -8,9 +10,12 @@ export const dynamic = "force-dynamic";
 export default async function VacancyPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  if (!isLocale(locale)) notFound();
+  const dict = getDictionary(locale as Locale);
+
   const supabase = await createClient();
   const { data: vacancy } = await supabase
     .from("vacancies")
@@ -39,7 +44,9 @@ export default async function VacancyPage({
 
       {vacancy.requirements && (
         <div className="mt-6">
-          <h2 className="text-lg font-medium text-zinc-900">Anforderungen</h2>
+          <h2 className="text-lg font-medium text-zinc-900">
+            {dict.vacancyDetail.requirementsHeading}
+          </h2>
           <div className="mt-2 whitespace-pre-wrap text-zinc-700">
             {vacancy.requirements}
           </div>
@@ -48,9 +55,13 @@ export default async function VacancyPage({
 
       <div className="mt-10 rounded-lg border border-zinc-200 bg-white p-6 shadow-sm">
         <h2 className="mb-4 text-lg font-medium text-zinc-900">
-          Jetzt bewerben
+          {dict.vacancyDetail.applyHeading}
         </h2>
-        <ApplicationForm vacancyId={vacancy.id} />
+        <ApplicationForm
+          vacancyId={vacancy.id}
+          locale={locale as Locale}
+          dict={dict.applicationForm}
+        />
       </div>
     </main>
   );
