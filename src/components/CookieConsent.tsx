@@ -2,33 +2,28 @@
 
 import { useEffect, useState } from "react";
 import type { Dictionary } from "@/i18n/types";
-
-export const COOKIE_CONSENT_KEY = "cookie-consent";
+import { useCookieConsent, setCookieConsent } from "@/lib/cookieConsent";
 
 export function CookieConsent({ dict }: { dict: Dictionary["cookieConsent"] }) {
-  const [visible, setVisible] = useState(false);
+  const consent = useCookieConsent();
+  const [forceOpen, setForceOpen] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem(COOKIE_CONSENT_KEY);
-    if (!stored) setVisible(true);
-
     function handleOpenPreferences() {
-      setVisible(true);
+      setForceOpen(true);
     }
     window.addEventListener("open-cookie-preferences", handleOpenPreferences);
     return () =>
       window.removeEventListener("open-cookie-preferences", handleOpenPreferences);
   }, []);
 
-  function choose(status: "accepted" | "declined") {
-    localStorage.setItem(COOKIE_CONSENT_KEY, status);
-    window.dispatchEvent(
-      new CustomEvent("cookie-consent-changed", { detail: { status } })
-    );
-    setVisible(false);
-  }
-
+  const visible = forceOpen || consent === null;
   if (!visible) return null;
+
+  function choose(status: "accepted" | "declined") {
+    setCookieConsent(status);
+    setForceOpen(false);
+  }
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-zinc-200 bg-white px-6 py-4 shadow-lg">
