@@ -24,12 +24,33 @@ export const de: Dictionary = {
     subtitle:
       "Wir vermitteln qualifizierte Fachkräfte aus dem Ausland und begleiten Bewerber und Unternehmen durch den gesamten Prozess.",
     cta: "Offene Stellen ansehen",
+    learnMore: "Mehr erfahren",
   },
   vacanciesList: {
     title: "Offene Stellen",
     empty:
       "Aktuell sind keine Stellen ausgeschrieben. Schauen Sie bald wieder vorbei.",
     location: "Standort",
+  },
+  vacanciesPreview: {
+    heading: "Aktuelle Stellenangebote",
+    subheading: "Ein Auszug aus unseren offenen Positionen",
+    viewAll: "Alle Stellen ansehen",
+    sample: [
+      { title: "Pflegefachkraft (m/w/d)", location: "Berlin", employmentType: "Vollzeit" },
+      { title: "Lagerlogistiker (m/w/d)", location: "Hamburg", employmentType: "Vollzeit" },
+      { title: "IT-Fachkraft (m/w/d)", location: "München", employmentType: "Vollzeit" },
+    ],
+  },
+  about: {
+    heading: "Über uns",
+    paragraph:
+      "your-talent.de ist ein Platzhalter-Unternehmensprofil. [Hier folgt eine kurze Beschreibung Ihres Unternehmens, Ihrer Gründungsgeschichte und Ihrer Mission.] Wir verbinden internationale Fachkräfte mit Unternehmen in Deutschland und begleiten beide Seiten durch den gesamten Prozess – von der Rekrutierung bis zur erfolgreichen Integration.",
+    stats: [
+      { value: "500+", label: "Vermittelte Fachkräfte" },
+      { value: "10+", label: "Jahre Erfahrung" },
+      { value: "50+", label: "Partnerunternehmen" },
+    ],
   },
   vacancyDetail: {
     requirementsHeading: "Anforderungen",

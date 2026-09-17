@@ -24,11 +24,32 @@ export const en: Dictionary = {
     subtitle:
       "We place qualified skilled workers from abroad and support both candidates and companies through the entire process.",
     cta: "View open positions",
+    learnMore: "Learn more",
   },
   vacanciesList: {
     title: "Open Positions",
     empty: "There are currently no open positions. Please check back soon.",
     location: "Location",
+  },
+  vacanciesPreview: {
+    heading: "Current Openings",
+    subheading: "A selection of our open positions",
+    viewAll: "View all vacancies",
+    sample: [
+      { title: "Registered Nurse", location: "Berlin", employmentType: "Full-time" },
+      { title: "Warehouse Logistics Specialist", location: "Hamburg", employmentType: "Full-time" },
+      { title: "IT Specialist", location: "Munich", employmentType: "Full-time" },
+    ],
+  },
+  about: {
+    heading: "About Us",
+    paragraph:
+      "your-talent.de is a placeholder company profile. [Add a short description of your company, its founding story, and its mission here.] We connect international skilled workers with companies in Germany and support both sides through the entire process – from recruitment to successful integration.",
+    stats: [
+      { value: "500+", label: "Skilled workers placed" },
+      { value: "10+", label: "Years of experience" },
+      { value: "50+", label: "Partner companies" },
+    ],
   },
   vacancyDetail: {
     requirementsHeading: "Requirements",

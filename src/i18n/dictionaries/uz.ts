@@ -24,11 +24,32 @@ export const uz: Dictionary = {
     subtitle:
       "Biz chet eldan malakali mutaxassislarni ishga joylashtiramiz va nomzodlar hamda kompaniyalarga butun jarayon davomida yordam beramiz.",
     cta: "Bo'sh ish o'rinlarini ko'rish",
+    learnMore: "Batafsil",
   },
   vacanciesList: {
     title: "Bo'sh ish o'rinlari",
     empty: "Hozircha bo'sh ish o'rinlari mavjud emas. Tez orada qayta tekshiring.",
     location: "Manzil",
+  },
+  vacanciesPreview: {
+    heading: "Joriy bo'sh ish o'rinlari",
+    subheading: "Bizning ochiq lavozimlarimizdan namuna",
+    viewAll: "Barcha bo'sh ish o'rinlarini ko'rish",
+    sample: [
+      { title: "Hamshira", location: "Berlin", employmentType: "To'liq stavka" },
+      { title: "Ombor logistikasi mutaxassisi", location: "Gamburg", employmentType: "To'liq stavka" },
+      { title: "IT mutaxassisi", location: "Myunxen", employmentType: "To'liq stavka" },
+    ],
+  },
+  about: {
+    heading: "Biz haqimizda",
+    paragraph:
+      "your-talent.de — bu namunaviy kompaniya profili. [Bu yerga kompaniyangiz, uning tashkil topish tarixi va missiyasi haqida qisqacha ma'lumot qo'shing.] Biz xalqaro malakali mutaxassislarni Germaniyadagi kompaniyalar bilan bog'laymiz va ikkala tomonni butun jarayon davomida — rekrutatsiyadan muvaffaqiyatli integratsiyagacha — qo'llab-quvvatlaymiz.",
+    stats: [
+      { value: "500+", label: "Joylashtirilgan mutaxassislar" },
+      { value: "10+", label: "Yillik tajriba" },
+      { value: "50+", label: "Hamkor kompaniyalar" },
+    ],
   },
   vacancyDetail: {
     requirementsHeading: "Talablar",

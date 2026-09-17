@@ -1,4 +1,6 @@
 export type ServiceItem = { title: string; description: string };
+export type SampleVacancy = { title: string; location: string; employmentType: string };
+export type Stat = { value: string; label: string };
 
 export type Dictionary = {
   nav: {
@@ -22,11 +24,23 @@ export type Dictionary = {
     title: string;
     subtitle: string;
     cta: string;
+    learnMore: string;
   };
   vacanciesList: {
     title: string;
     empty: string;
     location: string;
+  };
+  vacanciesPreview: {
+    heading: string;
+    subheading: string;
+    viewAll: string;
+    sample: [SampleVacancy, SampleVacancy, SampleVacancy];
+  };
+  about: {
+    heading: string;
+    paragraph: string;
+    stats: [Stat, Stat, Stat];
   };
   vacancyDetail: {
     requirementsHeading: string;
