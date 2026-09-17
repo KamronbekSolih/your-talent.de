@@ -44,11 +44,11 @@ export const en: Dictionary = {
   about: {
     heading: "About Us",
     paragraph:
-      "your-talent.de is a placeholder company profile. [Add a short description of your company, its founding story, and its mission here.] We connect international skilled workers with companies in Germany and support both sides through the entire process – from recruitment to successful integration.",
+      "your-talent.de is operated by \"ACADEMY DMF\" LLC, a company founded in November 2025 in the Samarkand region of Uzbekistan, focused on education and training. We prepare skilled workers for employment in Germany and place them with companies on the ground – from language preparation to successful integration.",
     stats: [
-      { value: "500+", label: "Skilled workers placed" },
-      { value: "10+", label: "Years of experience" },
-      { value: "50+", label: "Partner companies" },
+      { value: "2025", label: "Founded" },
+      { value: "Samarkand", label: "Based in Uzbekistan" },
+      { value: "100%", label: "Personal support" },
     ],
   },
   vacancyDetail: {
@@ -136,24 +136,25 @@ export const en: Dictionary = {
   impressum: {
     title: "Legal Notice",
     draftNotice:
-      "Draft — please replace with the real company details before publishing. German law requires an accurate legal notice (Impressum) on every commercial website.",
+      "Note: This information is based on the official register extract (Orginfo.uz, as of 15.11.2025) for \"ACADEMY DMF\" LLC. Since the company is registered in Uzbekistan rather than Germany, we strongly recommend having this legal notice reviewed by a lawyer specializing in cross-border internet and data protection law before the site goes live.",
     tmgHeading: "Information according to § 5 TMG (German law)",
     tmgLines: [
-      "[Company name / Full name]",
-      "[Street and house number]",
-      "[Postal code and city]",
-      "[Country]",
+      "\"ACADEMY DMF\" LLC",
+      "Langar ko'chasi 42, Apartment 1",
+      "Oqqo'rg'on QFY, Sorisuv mahalla, Payariq District, Samarkand Region",
+      "Uzbekistan",
     ],
     contactHeading: "Contact",
-    phoneLine: "Phone: [phone number]",
-    emailLine: "Email: [email address]",
-    registerHeading: "Commercial register",
+    phoneLine: "Phone: +998 93 830 76 04",
+    emailLine: "Email: academy@inbox.uz",
+    registerHeading: "Registration",
     registerText:
-      "[If registered: register court, registration number. If a sole proprietorship without registration: remove this section.]",
+      "Registered with the Davlat xizmatlari markazi (State Services Center), Republic of Uzbekistan, on 11.11.2025. Tax ID (STIR): 312564240. A German commercial register (Handelsregister) entry does not apply, as the company is registered in Uzbekistan.",
     vatHeading: "VAT ID",
-    vatText: "VAT identification number per § 27a UStG: [VAT ID, if applicable]",
+    vatText:
+      "The company is registered in Uzbekistan and does not hold a German VAT identification number. Tax identification number (STIR): 312564240.",
     responsibleHeading: "Responsible for content per § 55 (2) RStV",
-    responsibleText: "[Name and address of the responsible person]",
+    responsibleText: "A'zamov Shohruhxon Aslomjon o'g'li (Managing Director), address as above.",
     disputeHeading: "EU dispute resolution",
     disputeText:
       "The European Commission provides a platform for online dispute resolution (ODR): https://ec.europa.eu/consumers/odr/. Our email address can be found above in this legal notice.",
@@ -161,10 +162,10 @@ export const en: Dictionary = {
   datenschutz: {
     title: "Privacy Policy",
     draftNotice:
-      "Draft — please replace the bracketed placeholders with real details and have this reviewed by a legal professional, especially regarding how long application documents are retained.",
+      "Note: The contact details above come from the company's official register extract. Since the controller is based outside the EU (Uzbekistan) but offers services to individuals in Germany, we recommend a review by a lawyer specializing in GDPR and international data protection law — particularly regarding how long application documents are retained.",
     s1Heading: "1. Controller",
     s1Text:
-      "The controller under the General Data Protection Regulation (GDPR) is: [Company name / Full name], [Street and house number, postal code, city], Email: [email address]",
+      "The controller under the General Data Protection Regulation (GDPR) is: \"ACADEMY DMF\" LLC, Langar ko'chasi 42, Apartment 1, Oqqo'rg'on QFY, Payariq District, Samarkand Region, Uzbekistan. Email: academy@inbox.uz",
     s2Heading: "2. What data we process",
     s2Text:
       "When you apply for a position through our website or write to us via the contact form, we process the data you provide: name, email address, phone number, your message, and – if uploaded – your CV. This data is used exclusively to process your inquiry or application.",
@@ -192,8 +193,8 @@ export const en: Dictionary = {
     intro:
       "Have questions about our services? Write to us – we'll get back to you as soon as possible.",
     detailsHeading: "Contact details",
-    phoneLine: "Phone: [phone number]",
-    emailLine: "Email: [email address]",
+    phoneLine: "Phone: +998 93 830 76 04",
+    emailLine: "Email: academy@inbox.uz",
     formName: "Name *",
     formEmail: "Email *",
     formMessage: "Message *",

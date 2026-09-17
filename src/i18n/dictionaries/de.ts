@@ -45,11 +45,11 @@ export const de: Dictionary = {
   about: {
     heading: "Über uns",
     paragraph:
-      "your-talent.de ist ein Platzhalter-Unternehmensprofil. [Hier folgt eine kurze Beschreibung Ihres Unternehmens, Ihrer Gründungsgeschichte und Ihrer Mission.] Wir verbinden internationale Fachkräfte mit Unternehmen in Deutschland und begleiten beide Seiten durch den gesamten Prozess – von der Rekrutierung bis zur erfolgreichen Integration.",
+      "your-talent.de wird betrieben von der \"ACADEMY DMF\" MChJ, einem im November 2025 in der Region Samarkand (Usbekistan) gegründeten Unternehmen im Bereich Aus- und Weiterbildung. Wir bereiten Fachkräfte auf die Arbeitsaufnahme in Deutschland vor und vermitteln sie an Unternehmen vor Ort – von der Sprachvorbereitung bis zur erfolgreichen Integration.",
     stats: [
-      { value: "500+", label: "Vermittelte Fachkräfte" },
-      { value: "10+", label: "Jahre Erfahrung" },
-      { value: "50+", label: "Partnerunternehmen" },
+      { value: "2025", label: "Gegründet" },
+      { value: "Samarkand", label: "Standort in Usbekistan" },
+      { value: "100%", label: "Persönliche Betreuung" },
     ],
   },
   vacancyDetail: {
@@ -140,25 +140,25 @@ export const de: Dictionary = {
   impressum: {
     title: "Impressum",
     draftNotice:
-      "Entwurf — bitte durch die echten Firmendaten ersetzen, bevor die Seite veröffentlicht wird. Ein unvollständiges oder falsches Impressum ist in Deutschland abmahnfähig.",
+      "Hinweis: Die Angaben basieren auf dem offiziellen Registerauszug (Orginfo.uz, Stand 15.11.2025) der \"ACADEMY DMF\" MChJ. Da das Unternehmen in Usbekistan und nicht in Deutschland registriert ist, empfehlen wir dringend, dieses Impressum von einer auf grenzüberschreitendes Internet- und Datenschutzrecht spezialisierten Kanzlei prüfen zu lassen, bevor die Seite live geht.",
     tmgHeading: "Angaben gemäß § 5 TMG",
     tmgLines: [
-      "[Firmenname / Vor- und Nachname]",
-      "[Straße und Hausnummer]",
-      "[PLZ und Ort]",
-      "[Land]",
+      "\"ACADEMY DMF\" MChJ",
+      "Langar ko'chasi 42, Wohnung 1",
+      "Oqqo'rg'on QFY, Sorisuv mahalla, Bezirk Payariq, Gebiet Samarkand",
+      "Usbekistan",
     ],
     contactHeading: "Kontakt",
-    phoneLine: "Telefon: [Telefonnummer]",
-    emailLine: "E-Mail: [E-Mail-Adresse]",
-    registerHeading: "Handelsregister",
+    phoneLine: "Telefon: +998 93 830 76 04",
+    emailLine: "E-Mail: academy@inbox.uz",
+    registerHeading: "Registereintrag",
     registerText:
-      "[Falls eingetragen: Registergericht, Registernummer. Falls Einzelunternehmen ohne Eintragung: Abschnitt entfernen.]",
+      "Eingetragen beim Davlat xizmatlari markazi (Staatliches Dienstleistungszentrum), Republik Usbekistan, am 11.11.2025. Steuernummer (STIR): 312564240. Ein deutsches Handelsregister ist nicht einschlägig, da das Unternehmen in Usbekistan registriert ist.",
     vatHeading: "Umsatzsteuer-ID",
     vatText:
-      "Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: [USt-IdNr., falls vorhanden]",
+      "Das Unternehmen ist in Usbekistan registriert und verfügt über keine deutsche Umsatzsteuer-Identifikationsnummer. Steuerliche Identifikationsnummer (STIR): 312564240.",
     responsibleHeading: "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
-    responsibleText: "[Name und Anschrift der verantwortlichen Person]",
+    responsibleText: "A'zamov Shohruhxon Aslomjon o'g'li (Geschäftsführer), Anschrift wie oben.",
     disputeHeading: "EU-Streitschlichtung",
     disputeText:
       "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr/. Unsere E-Mail-Adresse finden Sie oben im Impressum.",
@@ -166,10 +166,10 @@ export const de: Dictionary = {
   datenschutz: {
     title: "Datenschutzerklärung",
     draftNotice:
-      "Entwurf — bitte die eckigen Platzhalter durch die echten Angaben ersetzen und im Zweifel juristisch prüfen lassen, insbesondere zur Aufbewahrungsdauer von Bewerbungsunterlagen.",
+      "Hinweis: Die Kontaktdaten stammen aus dem offiziellen Registerauszug des Unternehmens. Da der Verantwortliche außerhalb der EU (Usbekistan) sitzt, aber Dienste für Personen in Deutschland anbietet, empfehlen wir eine Prüfung durch eine auf DSGVO und internationales Datenschutzrecht spezialisierte Kanzlei — insbesondere zur Aufbewahrungsdauer von Bewerbungsunterlagen.",
     s1Heading: "1. Verantwortlicher",
     s1Text:
-      "Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist: [Firmenname / Vor- und Nachname], [Straße und Hausnummer, PLZ, Ort], E-Mail: [E-Mail-Adresse]",
+      "Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist: \"ACADEMY DMF\" MChJ, Langar ko'chasi 42, Wohnung 1, Oqqo'rg'on QFY, Bezirk Payariq, Gebiet Samarkand, Usbekistan. E-Mail: academy@inbox.uz",
     s2Heading: "2. Welche Daten wir verarbeiten",
     s2Text:
       "Wenn Sie sich über unsere Website auf eine Stelle bewerben oder uns über das Kontaktformular schreiben, verarbeiten wir die von Ihnen angegebenen Daten: Name, E-Mail-Adresse, Telefonnummer, Ihre Nachricht sowie – sofern hochgeladen – Ihren Lebenslauf. Diese Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage bzw. Bewerbung verwendet.",
@@ -197,8 +197,8 @@ export const de: Dictionary = {
     intro:
       "Haben Sie Fragen zu unseren Leistungen? Schreiben Sie uns – wir melden uns so schnell wie möglich bei Ihnen.",
     detailsHeading: "Kontaktdaten",
-    phoneLine: "Telefon: [Telefonnummer]",
-    emailLine: "E-Mail: [E-Mail-Adresse]",
+    phoneLine: "Telefon: +998 93 830 76 04",
+    emailLine: "E-Mail: academy@inbox.uz",
     formName: "Name *",
     formEmail: "E-Mail *",
     formMessage: "Nachricht *",

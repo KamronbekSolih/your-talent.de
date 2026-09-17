@@ -44,11 +44,11 @@ export const uz: Dictionary = {
   about: {
     heading: "Biz haqimizda",
     paragraph:
-      "your-talent.de — bu namunaviy kompaniya profili. [Bu yerga kompaniyangiz, uning tashkil topish tarixi va missiyasi haqida qisqacha ma'lumot qo'shing.] Biz xalqaro malakali mutaxassislarni Germaniyadagi kompaniyalar bilan bog'laymiz va ikkala tomonni butun jarayon davomida — rekrutatsiyadan muvaffaqiyatli integratsiyagacha — qo'llab-quvvatlaymiz.",
+      "your-talent.de \"ACADEMY DMF\" MChJ tomonidan boshqariladi — 2025-yil noyabr oyida Samarqand viloyatida ta'sis etilgan, ta'lim va tayyorgarlik sohasida faoliyat yurituvchi kompaniya. Biz malakali mutaxassislarni Germaniyada ishlashga tayyorlaymiz va ularni mahalliy kompaniyalarga joylashtiramiz — til tayyorgarligidan muvaffaqiyatli integratsiyagacha.",
     stats: [
-      { value: "500+", label: "Joylashtirilgan mutaxassislar" },
-      { value: "10+", label: "Yillik tajriba" },
-      { value: "50+", label: "Hamkor kompaniyalar" },
+      { value: "2025", label: "Tashkil etilgan" },
+      { value: "Samarqand", label: "O'zbekistondagi manzil" },
+      { value: "100%", label: "Shaxsiy yondashuv" },
     ],
   },
   vacancyDetail: {
@@ -138,25 +138,25 @@ export const uz: Dictionary = {
   impressum: {
     title: "Yuridik ma'lumot (Impressum)",
     draftNotice:
-      "Qoralama — sahifa e'lon qilinishidan oldin haqiqiy kompaniya ma'lumotlari bilan almashtiring. Germaniya qonunchiligiga ko'ra, har bir tijorat veb-sayti to'liq va aniq yuridik ma'lumotga (Impressum) ega bo'lishi shart.",
+      "Eslatma: Ushbu ma'lumotlar \"ACADEMY DMF\" MChJning rasmiy reestr ma'lumotnomasiga (Orginfo.uz, 15.11.2025 holatiga ko'ra) asoslangan. Kompaniya Germaniyada emas, O'zbekistonda ro'yxatdan o'tganligi sababli, sayt ishga tushirilishidan oldin ushbu yuridik ma'lumotnomani xalqaro internet va ma'lumotlarni himoya qilish huquqi bo'yicha mutaxassislashgan yuristga ko'rsatishni tavsiya qilamiz.",
     tmgHeading: "§ 5 TMG (Germaniya qonuni) talablariga muvofiq ma'lumotlar",
     tmgLines: [
-      "[Kompaniya nomi / F.I.Sh.]",
-      "[Ko'cha va uy raqami]",
-      "[Pochta indeksi va shahar]",
-      "[Mamlakat]",
+      "\"ACADEMY DMF\" MChJ",
+      "Langar ko'chasi 42-uy, 1-xonadon",
+      "Oqqo'rg'on QFY, Sorisuv mahallasi, Payariq tumani, Samarqand viloyati",
+      "O'zbekiston",
     ],
     contactHeading: "Aloqa",
-    phoneLine: "Telefon: [telefon raqami]",
-    emailLine: "Elektron pochta: [elektron pochta manzili]",
-    registerHeading: "Savdo reestri",
+    phoneLine: "Telefon: +998 93 830 76 04",
+    emailLine: "Elektron pochta: academy@inbox.uz",
+    registerHeading: "Ro'yxatga olinishi",
     registerText:
-      "[Agar ro'yxatdan o'tgan bo'lsa: sud nomi, ro'yxat raqami. Agar ro'yxatdan o'tmagan yakka tartibdagi tadbirkorlik bo'lsa: ushbu bo'limni olib tashlang.]",
+      "O'zbekiston Respublikasi Davlat xizmatlari markazida 11.11.2025 sanada ro'yxatdan o'tgan. STIR: 312564240. Kompaniya O'zbekistonda ro'yxatdan o'tganligi sababli, Germaniya savdo reestri (Handelsregister) qo'llanilmaydi.",
     vatHeading: "QQS identifikatsiya raqami",
     vatText:
-      "§ 27a UStG ga muvofiq QQS identifikatsiya raqami: [QQS raqami, mavjud bo'lsa]",
+      "Kompaniya O'zbekistonda ro'yxatdan o'tgan bo'lib, Germaniya QQS identifikatsiya raqamiga ega emas. Soliq identifikatsiya raqami (STIR): 312564240.",
     responsibleHeading: "§ 55 (2) RStV ga muvofiq mazmun uchun mas'ul shaxs",
-    responsibleText: "[Mas'ul shaxsning ismi va manzili]",
+    responsibleText: "A'zamov Shohruhxon Aslomjon o'g'li (Direktor), manzil yuqorida ko'rsatilgan.",
     disputeHeading: "Yevropa Ittifoqi nizolarni hal qilish",
     disputeText:
       "Yevropa Komissiyasi onlayn nizolarni hal qilish (ODR) uchun platforma taqdim etadi: https://ec.europa.eu/consumers/odr/. Bizning elektron pochta manzilimizni ushbu sahifaning yuqori qismida topishingiz mumkin.",
@@ -164,10 +164,10 @@ export const uz: Dictionary = {
   datenschutz: {
     title: "Maxfiylik siyosati",
     draftNotice:
-      "Qoralama — qavs ichidagi joy egallovchi matnlarni haqiqiy ma'lumotlar bilan almashtiring va, ayniqsa ariza hujjatlarini saqlash muddati bo'yicha, yurist bilan maslahatlashing.",
+      "Eslatma: Yuqoridagi aloqa ma'lumotlari kompaniyaning rasmiy reestr ma'lumotnomasidan olingan. Mas'ul shaxs Yevropa Ittifoqidan tashqarida (O'zbekistonda) joylashgan, ammo Germaniyadagi shaxslarga xizmat ko'rsatganligi sababli, GDPR va xalqaro ma'lumotlarni himoya qilish huquqi bo'yicha yuristga — ayniqsa ariza hujjatlarini saqlash muddati bo'yicha — murojaat qilishni tavsiya qilamiz.",
     s1Heading: "1. Mas'ul shaxs",
     s1Text:
-      "Umumiy ma'lumotlarni himoya qilish reglamentiga (GDPR) ko'ra mas'ul shaxs: [Kompaniya nomi / F.I.Sh.], [Ko'cha va uy raqami, pochta indeksi, shahar], Elektron pochta: [elektron pochta manzili]",
+      "Umumiy ma'lumotlarni himoya qilish reglamentiga (GDPR) ko'ra mas'ul shaxs: \"ACADEMY DMF\" MChJ, Langar ko'chasi 42-uy, 1-xonadon, Oqqo'rg'on QFY, Payariq tumani, Samarqand viloyati, O'zbekiston. Elektron pochta: academy@inbox.uz",
     s2Heading: "2. Biz qanday ma'lumotlarni qayta ishlaymiz",
     s2Text:
       "Agar siz bizning veb-saytimiz orqali biror lavozimga ariza topshirsangiz yoki aloqa formasi orqali bizga yozsangiz, biz siz taqdim etgan ma'lumotlarni — ism, elektron pochta manzili, telefon raqami, xabaringiz va, agar yuklangan bo'lsa, rezyumeingizni — qayta ishlaymiz. Ushbu ma'lumotlar faqat sizning so'rovingiz yoki arizangizni ko'rib chiqish uchun ishlatiladi.",
@@ -195,8 +195,8 @@ export const uz: Dictionary = {
     intro:
       "Xizmatlarimiz haqida savollaringiz bormi? Bizga yozing — imkon qadar tezroq siz bilan bog'lanamiz.",
     detailsHeading: "Aloqa ma'lumotlari",
-    phoneLine: "Telefon: [telefon raqami]",
-    emailLine: "Elektron pochta: [elektron pochta manzili]",
+    phoneLine: "Telefon: +998 93 830 76 04",
+    emailLine: "Elektron pochta: academy@inbox.uz",
     formName: "Ism-familiya *",
     formEmail: "Elektron pochta *",
     formMessage: "Xabar *",

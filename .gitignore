@@ -37,6 +37,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# business/personal documents dropped into the repo root - never commit these
+*.pdf
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
