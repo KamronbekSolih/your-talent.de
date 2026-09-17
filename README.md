@@ -53,6 +53,29 @@ Analytics 4 measurement ID to enable analytics. It only loads after a
 visitor accepts cookies in the consent banner; leave it unset to disable
 analytics entirely.
 
+### Optional: email notifications
+
+A Postgres trigger (`supabase/migrations/0003_email_notifications.sql`)
+emails you whenever someone submits an application or contact message,
+via the [Resend](https://resend.com) API — no separate server or Edge
+Function needed. It's a no-op until two secrets exist in Supabase Vault,
+which keeps them out of both git and this app's environment variables.
+
+1. Create a free Resend account and copy an API key from the
+   [dashboard](https://resend.com/api-keys). The free tier's default
+   sender (`onboarding@resend.dev`) only delivers to the email address
+   you signed up with — verify a domain in Resend if you want to notify
+   a different address.
+2. In the Supabase SQL editor, run (with your own values):
+
+   ```sql
+   select vault.create_secret('re_your_api_key_here', 'resend_api_key');
+   select vault.create_secret('you@example.com', 'notification_email');
+   ```
+
+That's it — new rows in `applications` or `contact_messages` will trigger
+an email from then on. Nothing needs redeploying.
+
 ## CI/CD
 
 - **CI** (`.github/workflows/ci.yml`) runs lint and build on every push and
